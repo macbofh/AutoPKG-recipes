@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Rumpus 8 disk image and creates a package.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.pkg.Rumpus</string>
+    <string>com.github.macbofh.pkg.Rumpus8</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

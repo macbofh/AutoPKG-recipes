@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Rumpus 8 disk image.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.download.Rumpus8</string>
+    <string>com.github.macbofh.download.Rumpus8</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -32,7 +32,7 @@
             <key>Arguments</key>
             <dict>
                 <key>filename</key>
-                <string>%match%.dmg</string>
+                <string>Rumpus-%match%.dmg</string>
                 <key>url</key>
                 <string>http://www.maxumdev.com/DownloadPackages/Rumpus-%match%.dmg</string>
             </dict>
