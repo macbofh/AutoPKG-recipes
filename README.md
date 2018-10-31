@@ -1,2 +1,2 @@
 # AutoPKG-recipes
-My pkg and/or jss recipes for AutoPKG. Unstable Development versions!! 
+My pkg and/or jss recipes for AutoPKG. Unstable Development versions!!  
