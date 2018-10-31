@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Rumpus 8 disk image.</string>
+    <string>Downloads the latest Rumpus 8 disk image .</string>
     <key>Identifier</key>
     <string>com.github.macbofh.download.Rumpus8</string>
     <key>Input</key>
