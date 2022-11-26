@@ -1,0 +1,23 @@
+Description: Downloads the ARM and Intel versions of Spotify
+Identifier: com.github.macbofh.download.spotify-universal
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Spotify
+  URL_ARM64: https://download.scdn.co/SpotifyARM64.dmg
+  URL_X86_64: https://download.scdn.co/Spotify.dmg
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-arm64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_ARM64%'
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-x86_64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_X86_64%'
+
+  - Processor: EndOfCheckPhase
