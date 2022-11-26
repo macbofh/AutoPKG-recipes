@@ -1,4 +1,4 @@
-Description: Create pkg from both ARM and Intel verions of Spotify
+Description: Create pkg from both ARM and Intel versions of Spotify
 Identifier: com.github.macbofh.pkg.spotify-universal
 ParentRecipe: com.github.macbofh.download.spotify-universal
 MinimumVersion: '2.3'

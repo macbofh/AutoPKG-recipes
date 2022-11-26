@@ -1,4 +1,4 @@
-Description: Create pkg from both ARM and Intel verions of Spotify and add it to Jamf
+Description: Create pkg from both ARM and Intel versions of Spotify and add it to Jamf
 Identifier: com.github.macbofh.jamf.spotify-universal
 ParentRecipe: com.github.macbofh.pkg.spotify-universal
 MinimumVersion: '2.3'
