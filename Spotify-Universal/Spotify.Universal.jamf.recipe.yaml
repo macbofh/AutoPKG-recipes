@@ -1,10 +1,10 @@
-Description: Create pkg from both Arm and Intel verions of the IntelliJ App and add it to Jamf
-Identifier: com.github.erikstam.jamf.IntelliJ-Universal
-ParentRecipe: com.github.erikstam.pkg.IntelliJ-Universal
+Description: Create pkg from both ARM and Intel verions of Spotify and add it to Jamf
+Identifier: com.github.macbofh.jamf.spotify-universal
+ParentRecipe: com.github.macbofh.pkg.spotify-universal
 MinimumVersion: '2.3'
 
 Input:
-  NAME: IntelliJ CE
+  NAME: Spotify
   SOFTWARE_TITLE: '%NAME%'
   CATEGORY: Development
   GROUP_NAME: '%NAME%-update-smart'
@@ -14,7 +14,7 @@ Input:
   POLICY_NAME: 'Install Latest %NAME%'
   POLICY_RUN_COMMAND: ' '
   SELF_SERVICE_DISPLAY_NAME: 'Install Latest %NAME%'
-  SELF_SERVICE_DESCRIPTION: '%NAME% Makes API Development Simple.'
+  SELF_SERVICE_DESCRIPTION: '%NAME% plays music.'
   SELF_SERVICE_ICON: '%SOFTWARE_TITLE%.png'
   INSTALL_BUTTON_TEXT: 'Install'
   REINSTALL_BUTTON_TEXT: 'Install'
