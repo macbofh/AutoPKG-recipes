@@ -62,6 +62,6 @@ Process:
     Arguments:
       path_list:  
         - '%RECIPE_CACHE_DIR%/Universal'
-        # - '%RECIPE_CACHE_DIR%/unpack'
+        - '%RECIPE_CACHE_DIR%/payload'
         
   - Processor: EndOfCheckPhase
