@@ -1,0 +1,23 @@
+Description: Downloads the ARM and Intel versions of Dropbox
+Identifier: com.github.macbofh.download.dropbox-universal
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Dropbox
+  URL_ARM64: https://www.dropbox.com/downloading?plat=mac&type=full&arch=arm64
+  URL_X86_64: https://www.dropbox.com/downloading?plat=mac&type=full
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-arm64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_ARM64%'
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-x86_64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_X86_64%'
+
+  - Processor: EndOfCheckPhase
