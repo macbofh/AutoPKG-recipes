@@ -28,7 +28,7 @@ Process:
     Arguments:
       app_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%-arm64.dmg/%NAME%.app'
       pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
-
+      
   - Processor: FileCreator
     Arguments:
       file_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/preinstall'
@@ -58,10 +58,5 @@ Process:
         scripts: '%RECIPE_CACHE_DIR%/Universal/Scripts'
         pkgroot: '%RECIPE_CACHE_DIR%/Universal/pkgroot'
 
-  - Processor: PathDeleter
-    Arguments:
-      path_list:  
-        - '%RECIPE_CACHE_DIR%/Universal'
-        - '%RECIPE_CACHE_DIR%/payload'
         
   - Processor: EndOfCheckPhase
