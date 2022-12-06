@@ -11,13 +11,13 @@ Process:
   - Processor: URLDownloader
     Arguments:
       filename: '%NAME%-arm64.dmg'
-      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      download_dir: '%RECIPE_CACHE_DIR%/silicon'
       url: '%URL_ARM64%'
 
   - Processor: URLDownloader
     Arguments:
       filename: '%NAME%-x86_64.dmg'
-      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      download_dir: '%RECIPE_CACHE_DIR%/intel'
       url: '%URL_X86_64%'
 
   - Processor: EndOfCheckPhase
