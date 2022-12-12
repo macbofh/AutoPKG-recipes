@@ -3,7 +3,7 @@ Identifier: com.github.macbofh.download.miro-universal
 MinimumVersion: '2.3'
 
 Input:
-  NAME: Dropbox
+  NAME: Miro
   URL_ARM64: https://desktop.miro.com/platforms/darwin-arm64/Miro.dmg
   URL_X86_64: https://desktop.miro.com/platforms/darwin/Miro.dmg
 
