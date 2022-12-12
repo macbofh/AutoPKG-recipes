@@ -48,6 +48,8 @@ Process:
         else
           /usr/sbin/installer -pkg "$x86_64_package" -target "$3"
         fi
+        
+        chown -R root:wheel /Applications/Spotify.app
 
         exit 0
 
