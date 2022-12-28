@@ -9,7 +9,8 @@ Input:
 Process:
   - Processor: AppDmgVersioner
     Arguments:
-      dmg_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%-x86_64.dmg'
+      dmg_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64.dmg'
+      
 
   - Processor: PkgRootCreator
     Arguments:
@@ -21,12 +22,12 @@ Process:
 
   - Processor: AppPkgCreator
     Arguments:
-      app_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%-x86_64.dmg/%NAME%.app'
+      app_path: '%RECIPE_CACHE_DIR%/intel/%NAME%-x86_64.dmg/%NAME%.app'
       pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-x86_64-%version%.pkg'
       
   - Processor: AppPkgCreator
     Arguments:
-      app_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%-arm64.dmg/%NAME%.app'
+      app_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64.dmg/%NAME%.app'
       pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
 
   - Processor: FileCreator
