@@ -1,0 +1,20 @@
+Description: Create pkg from MySQLWorkbench
+Identifier: com.github.macbofh.pkg.MySQLWorkbench
+ParentRecipe: com.github.homebysix.download.MySQLWorkbench
+MinimumVersion: '2.3'
+
+Input:
+  NAME: MySQLWorkbench
+
+Process:
+  - Processor: AppDmgVersioner
+    Arguments:
+      dmg_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg'
+        
+  - Processor: com.github.homebysix.VersionSplitter/VersionSplitter
+    Arguments:
+      split_on: '.CE'
+
+  - Processor: AppPkgCreator
+      
+  - Processor: EndOfCheckPhase
