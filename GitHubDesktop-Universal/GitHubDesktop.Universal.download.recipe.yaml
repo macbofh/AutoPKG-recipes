@@ -1,0 +1,23 @@
+Description: Downloads the ARM and Intel versions of GitHub Desktop
+Identifier: com.github.macbofh.download.githubdesktop-universal
+MinimumVersion: '2.3'
+
+Input:
+  NAME: 'GitHub Desktop'
+  URL_ARM64: https://central.github.com/deployments/desktop/desktop/latest/darwin-arm64
+  URL_X86_64: https://central.github.com/deployments/desktop/desktop/latest/darwin
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-arm64.zip'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_ARM64%'
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-x86_64.zip'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_X86_64%'
+
+  - Processor: EndOfCheckPhase
