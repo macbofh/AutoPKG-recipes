@@ -31,10 +31,10 @@ Process:
       app_path: '%pkgroot%/Applications/%NAME%.app'
       pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
  
-  - Processor: PathDeleter
-    Arguments:
-      path_list:  
-        - '%RECIPE_CACHE_DIR%/Universal'
+#   - Processor: PathDeleter
+#     Arguments:
+#       path_list:  
+#         - '%RECIPE_CACHE_DIR%/Universal'
         # - '%RECIPE_CACHE_DIR%/unpack'
         
   - Processor: EndOfCheckPhase
