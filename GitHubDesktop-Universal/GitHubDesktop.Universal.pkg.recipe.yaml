@@ -1,0 +1,40 @@
+Description: Create pkg from both ARM and Intel versions of GitHub Desktop
+Identifier: com.github.macbofh.pkg.githubdesktop-universal
+ParentRecipe: com.github.macbofh.download.githubdesktop-universal
+MinimumVersion: '2.3'
+
+Input:
+  NAME: 'GitHub Desktop'
+
+Process:
+  - Processor: PkgRootCreator
+    Arguments:
+      pkgroot: '%RECIPE_CACHE_DIR%/Universal'
+      pkgdirs:
+        Applications: '0775'
+        pkgroot: '0775'
+        Scripts: '0775'
+
+  - Processor: Unarchiver
+    Arguments:
+      archive_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%-arm64.zip'
+      destination_path: '%pkgroot%/Applications'
+      purge_destination: true    
+
+  - Processor: Versioner
+    Arguments:
+      input_plist_path: '%pkgroot%/Applications/GitHub Desktop.app/Contents/Info.plist'
+      plist_version_key: 'CFBundleShortVersionString'
+    
+  - Processor: AppPkgCreator
+    Arguments:
+      app_path: '%pkgroot%/Applications/%NAME%.app'
+      pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
+ 
+  - Processor: PathDeleter
+    Arguments:
+      path_list:  
+        - '%RECIPE_CACHE_DIR%/Universal'
+        # - '%RECIPE_CACHE_DIR%/unpack'
+        
+  - Processor: EndOfCheckPhase
