@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of MySQLWorkbench.</string>
 	<key>Identifier</key>
-	<string>com.github.macbofh.download.MySQLWorkbench-x64</string>
+	<string>com.github.macbofh.download.MySQLWorkbenchx64</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d.]+)-x86_64.dmgdmg)</string>
+				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d.]+)-\S+x86_64.dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>

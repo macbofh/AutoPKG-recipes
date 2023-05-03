@@ -1,6 +1,6 @@
 Description: Create pkg from MySQLWorkbench
 Identifier: com.github.macbofh.pkg.MySQLWorkbench
-ParentRecipe: com.github.homebysix.download.MySQLWorkbench
+ParentRecipe: com.github.macbofh.download.MySQLWorkbenchx64
 MinimumVersion: '2.3'
 
 Input:
