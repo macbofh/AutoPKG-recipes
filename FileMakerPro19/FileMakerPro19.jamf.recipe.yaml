@@ -1,0 +1,17 @@
+Description: Create pkg from FileMakerPro19
+Identifier: com.github.macbofh.pkg.FileMakerPro19
+ParentRecipe: com.github.apizz.download.FileMakerProClaris
+MinimumVersion: '2.3'
+
+Input:
+  NAME: FileMaker Pro
+
+Process:
+  - Processor: Versioner
+    Arguments:
+      input_plist_path: '%pathname%/FileMaker Pro.app/Contents/Info.plist'
+      plist_version_key: 'CFBundleShortVersionString'
+
+  - Processor: AppPkgCreator
+    Arguments:
+      pkg_path: '%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg'
