@@ -63,7 +63,7 @@ Process:
 - Processor: PathDeleter
   Arguments:
     path_list:  
-      # - '%RECIPE_CACHE_DIR%/Universal'
+      - '%RECIPE_CACHE_DIR%/Universal'
       # - '%RECIPE_CACHE_DIR%/unpack'
         
 - Processor: EndOfCheckPhase
