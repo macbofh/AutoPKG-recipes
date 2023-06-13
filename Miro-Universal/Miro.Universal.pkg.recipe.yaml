@@ -24,11 +24,11 @@ Process:
       Scripts: '0775'
 - Arguments:
     app_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64.dmg/%NAME%.app'
-    pkg_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64-%version%.pkg'
+    pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
   Processor: AppPkgCreator
 - Arguments:
     app_path: '%RECIPE_CACHE_DIR%/intel/%NAME%-x86_64.dmg/%NAME%.app'
-    pkg_path: '%RECIPE_CACHE_DIR%/intel/%NAME%-x86_64-%version%.pkg'
+    pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-x86_64-%version%.pkg'
   Processor: AppPkgCreator
 - Processor: FileCreator
   Arguments:
@@ -63,7 +63,7 @@ Process:
 - Processor: PathDeleter
   Arguments:
     path_list:  
-      - '%RECIPE_CACHE_DIR%/Universal'
+      # - '%RECIPE_CACHE_DIR%/Universal'
       # - '%RECIPE_CACHE_DIR%/unpack'
         
 - Processor: EndOfCheckPhase
