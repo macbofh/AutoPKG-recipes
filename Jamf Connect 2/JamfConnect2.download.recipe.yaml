@@ -1,0 +1,16 @@
+Description: Downloads the Jamf Connect 2
+Identifier: com.github.macbofh.download.jamfconnect2
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Jamf Connect
+  URL: https://files.jamfconnect.com/JamfConnect.dmg
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL%'
+
+  - Processor: EndOfCheckPhase
