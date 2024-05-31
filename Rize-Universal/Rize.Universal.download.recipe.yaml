@@ -1,0 +1,23 @@
+Description: Downloads the ARM and Intel versions of rize
+Identifier: com.github.macbofh.download.rize-universal
+MinimumVersion: '2.3'
+
+Input:
+  NAME: rize
+  URL_ARM64: https://app.rize.io/downloads/macos?arch=arm64
+  URL_X86_64: https://app.rize.io/downloads/macos?arch=x64
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-arm64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_ARM64%'
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%-x64.dmg'
+      download_dir: '%RECIPE_CACHE_DIR%/downloads'
+      url: '%URL_X86_64%'
+
+  - Processor: EndOfCheckPhase
