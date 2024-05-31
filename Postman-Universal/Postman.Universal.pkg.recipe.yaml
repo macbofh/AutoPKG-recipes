@@ -1,0 +1,62 @@
+Description: Create pkg from both ARM and Intel versions of Postman
+Identifier: com.github.macbofh.pkg.postman-universal
+Input:
+  NAME: postman
+MinimumVersion: '2.3'
+ParentRecipe: com.github.macbofh.download.postman-universal
+Process:
+- Arguments:
+    dmg_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64.dmg'
+  Processor: AppDmgVersioner
+- Processor: PkgRootCreator
+  Arguments:
+    pkgroot: '%RECIPE_CACHE_DIR%/Universal'
+    pkgdirs:
+      Applications: '0775'
+      pkgroot: '0775'
+      Scripts: '0775'
+- Arguments:
+    app_path: '%RECIPE_CACHE_DIR%/silicon/%NAME%-arm64.dmg/%NAME%.app'
+    pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-arm64-%version%.pkg'
+  Processor: AppPkgCreator
+- Arguments:
+    app_path: '%RECIPE_CACHE_DIR%/intel/%NAME%-x86_64.dmg/%NAME%.app'
+    pkg_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/%NAME%-x86_64-%version%.pkg'
+  Processor: AppPkgCreator
+- Processor: FileCreator
+  Arguments:
+    file_path: '%RECIPE_CACHE_DIR%/Universal/Scripts/preinstall'
+    file_mode: '0755'
+    file_content: |
+      #!/bin/bash
+
+      arm64_package="%NAME%-arm64-%version%.pkg"
+      x86_64_package="%NAME%-x86_64-%version%.pkg"
+
+      if [[ $( /usr/bin/arch ) = arm64* ]]; then
+          /usr/sbin/installer -pkg "$arm64_package" -target "$3"
+      else
+          /usr/sbin/installer -pkg "$x86_64_package" -target "$3"
+      fi
+        
+      chown -R root:wheel /Applications/postman.app
+
+      exit 0
+- Processor: PkgCreator
+  Arguments:
+    pkg_request:
+      id: '%bundleid%'
+      version: '%version%'
+      options: purge_ds_store
+      pkgname: '%NAME%-Universal-%version%'
+      pkgdir: '%RECIPE_CACHE_DIR%'
+      scripts: '%RECIPE_CACHE_DIR%/Universal/Scripts'
+      pkgroot: '%RECIPE_CACHE_DIR%/Universal/pkgroot'
+
+- Processor: PathDeleter
+  Arguments:
+    path_list:  
+      - '%RECIPE_CACHE_DIR%/Universal'
+      # - '%RECIPE_CACHE_DIR%/unpack'
+        
+- Processor: EndOfCheckPhase
