@@ -4,7 +4,7 @@ ParentRecipe: com.github.macbofh.pkg.miro-universal
 MinimumVersion: '2.3'
 
 Input:
-  NAME: Miro
+  NAME: Postman
   SOFTWARE_TITLE: '%NAME%'
   CATEGORY: Development
   GROUP_NAME: '%NAME%-update-smart'

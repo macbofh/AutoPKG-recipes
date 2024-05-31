@@ -3,7 +3,7 @@ Identifier: com.github.macbofh.download.postman-universal
 MinimumVersion: '2.3'
 
 Input:
-  NAME: Miro
+  NAME: Postman
   URL_ARM64: https://dl.pstmn.io/download/latest/osx_arm64
   URL_X86_64: https://dl.pstmn.io/download/latest/osx_64
 
